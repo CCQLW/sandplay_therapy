@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
     public CharacterController characterController;
-    public AnimatorController animatorController;
+    //public AnimatorController animatorController;
 
     public float rotateSpeed = 180f;//旋转速度
 
@@ -78,13 +78,13 @@ public class PlayerController : MonoBehaviour
         {
             isGround = true;
             velocity = 0;
-            animatorController.setBool("Jump", false);
+            //animatorController.setBool("Jump", false);
         }
         if(isGround == true)
         {
             if(Input.GetButtonDown("Jump"))
             {
-                animatorController.setBool("Jump", true);
+                //animatorController.setBool("Jump", true);
                 isGround = false;
                 velocity = Mathf.Sqrt(-2 * gravity * maxHeight);
             }
