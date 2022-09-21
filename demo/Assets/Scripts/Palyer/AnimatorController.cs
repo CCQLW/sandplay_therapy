@@ -19,15 +19,7 @@ public class AnimatorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.S))setBool("backWalk", true);
-        else setBool("backWalk", false);
-        if(Input.GetKey(KeyCode.A))setBool("leftWalk", true);
-        else setBool("leftWalk", false);
-        if(Input.GetKey(KeyCode.D))setBool("rightWalk", true);
-        else setBool("rightWalk", false);
-        if(Input.GetKey(KeyCode.E))setBool("defend", true);
-        else setBool("defend", false);
-
+        
 
     }
     public void setBool(string name, bool flag)

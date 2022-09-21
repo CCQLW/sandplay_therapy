@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private float horizontalVal;
     private float verticalVal;
-
+    private float verticalSpeed = 0f;
    /*
     落地检测（发射胶囊碰撞体检测）
     */
@@ -36,7 +36,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isGround;
 
-    public float moveSpeed = 10f;//运动速度
+    public float moveSpeed = 5f;//运动速度
+    public float maxSpeed  = 10f;
     public float velocity = 0f;//跳跃速度
     public float maxHeight = 2f;//跳跃最大高度
     public float gravity = -20f;//重力加速度
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMoveController();
         PlayerRotateController();
+        PlayerAnimator();
     }
 
     void PlayerRotateController()
@@ -71,8 +73,15 @@ public class PlayerController : MonoBehaviour
         Vector3 MoveValue = Vector3.zero;
         horizontalVal = Input.GetAxis("Horizontal");//AD
         verticalVal = Input.GetAxis("Vertical");//WS
-        MoveValue += transform.forward * moveSpeed * Time.deltaTime * verticalVal;
+
+        MoveValue += transform.forward * (Time.deltaTime * Time.deltaTime + verticalSpeed *moveSpeed * 2.0f * Time.deltaTime) * 0.5f;
         MoveValue += transform.right * moveSpeed * Time.deltaTime * horizontalVal;
+        
+        verticalSpeed += verticalVal * Time.deltaTime;
+        if(Mathf.Abs(verticalVal) < 0.01f)verticalSpeed = 0f;
+        if(verticalSpeed * moveSpeed > maxSpeed)verticalSpeed = maxSpeed / moveSpeed;
+        if(verticalSpeed * moveSpeed < maxSpeed * -1.0f)verticalSpeed = - 1.0f * maxSpeed / moveSpeed;
+        
         velocity += gravity * Time.deltaTime;
         if(IsGround() && velocity <= 0)
         {
@@ -100,6 +109,26 @@ public class PlayerController : MonoBehaviour
         Collider[] colliders = Physics.OverlapCapsule(point1, point2, radius, LayerMask.GetMask("Ground"));
         if(colliders.Length >=1)return true;
         return false;
+    }
+
+    void PlayerAnimator()
+    {
+        if(Input.GetKey(KeyCode.S))animatorController.setBool("backWalk", true);
+        else animatorController.setBool("backWalk", false);
+        if(Input.GetKey(KeyCode.A))animatorController.setBool("leftWalk", true);
+        else animatorController.setBool("leftWalk", false);
+        if(Input.GetKey(KeyCode.D))animatorController.setBool("rightWalk", true);
+        else animatorController.setBool("rightWalk", false);
+        if(Input.GetKey(KeyCode.E))animatorController.setBool("defend", true);
+        else animatorController.setBool("defend", false);
+        if(Input.GetKey(KeyCode.W))
+        {
+            animatorController.setBool("forword", true);
+            float val = verticalSpeed;
+            if(val > 1f)val = 1f;
+            animatorController.setFloat("speed", val);
+        }
+        else animatorController.setBool("forword", false);
     }
     
 }
