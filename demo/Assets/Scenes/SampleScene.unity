@@ -1423,6 +1423,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   injury: 0
+--- !u!1 &979005577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1436060775348252145, guid: 8fb18b2ea47be8141b779c1d7c418c8b, type: 3}
+  m_PrefabInstance: {fileID: 8790782961682148992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &979005580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979005577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855793d683a9a194c8eb8aef299b2d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 979005577}
+  openDoor: 0
 --- !u!1001 &987864083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1694,6 +1713,7 @@ GameObject:
   - component: {fileID: 1387972211}
   - component: {fileID: 1387972210}
   - component: {fileID: 1387972209}
+  - component: {fileID: 1387972212}
   m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
@@ -1723,7 +1743,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387972207}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1777,6 +1797,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387972207}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1387972212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387972207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d409e97057f50bc4b877ff1482d570d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 979005580}
 --- !u!1 &1401314047 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 7a7d9a1762a8c204d92dc7401856c577, type: 3}
@@ -2585,6 +2618,10 @@ PrefabInstance:
     - target: {fileID: 1436060775348252149, guid: 8fb18b2ea47be8141b779c1d7c418c8b, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436060775348613585, guid: 8fb18b2ea47be8141b779c1d7c418c8b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.18729
       objectReference: {fileID: 0}
     - target: {fileID: 2088086606123702417, guid: 8fb18b2ea47be8141b779c1d7c418c8b, type: 3}
       propertyPath: m_Layer
