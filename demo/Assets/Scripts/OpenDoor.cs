@@ -19,6 +19,6 @@ public class OpenDoor : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         door.openDoor = true;
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }
