@@ -2426,6 +2426,10 @@ PrefabInstance:
       value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 6781331319864936791, guid: 09b877806b347a843b3b2c4b55e65969, type: 3}
+      propertyPath: playerRigidbody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781331319864936791, guid: 09b877806b347a843b3b2c4b55e65969, type: 3}
       propertyPath: animatorController
       value: 
       objectReference: {fileID: 164062665}
@@ -2435,11 +2439,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6781331319864936808, guid: 09b877806b347a843b3b2c4b55e65969, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.5
+      value: 8.07
       objectReference: {fileID: 0}
     - target: {fileID: 6781331319864936808, guid: 09b877806b347a843b3b2c4b55e65969, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 6781331319864936808, guid: 09b877806b347a843b3b2c4b55e65969, type: 3}
       propertyPath: m_LocalPosition.z

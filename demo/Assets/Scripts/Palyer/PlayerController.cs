@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;//运动速度
     public float maxSpeed  = 10f;
     public float velocity = 0f;//跳跃速度
-    public float maxHeight = 2f;//跳跃最大高度
+    public float maxHeight = 1f;//跳跃最大高度
     public float gravity = -20f;//重力加速度
 
     

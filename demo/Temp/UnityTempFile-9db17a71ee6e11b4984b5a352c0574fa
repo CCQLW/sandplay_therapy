@@ -317,6 +317,7 @@
 /define:UNITY_TEAM_LICENSE
 /define:USE_SEARCH_ENGINE_API
 Assets\Scripts\Attack\FanAttack.cs
+Assets\Scripts\Attack\RectangleAttack.cs
 Assets\Scripts\Disappear.cs
 Assets\Scripts\FSMCleaSignals.cs
 Assets\Scripts\Knapsack\DisplayKnapsack.cs
